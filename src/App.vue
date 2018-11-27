@@ -1,19 +1,58 @@
 <template>
   <div id="app">
-    <Main/>
+    <!-- HEADER
+    =============================================-->
+    <header class="site-header" role="banner">
+      <!-- NAVBAR
+      =============================================-->
+      <nav class="navbar navbar-expand-sm navbar-dark sm-transparent">
+        <div class="container">
+          <div class="logo-container">
+            <a class="navbar-brand symbol" href="/">
+              <img src="symbol.svg" alt="Symbol">
+            </a>
+            <a class="navbar-brand logo" href="/">
+              <img src="logo.svg" alt="Logo">
+            </a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span>
+              <i class="fas fa-bars"></i>
+            </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item px-3 active">
+                <router-link class="nav-link" to="/">
+                  <span class="nav-span">Home</span>
+                  <span class="sr-only">(current)</span>
+                </router-link>
+              </li>
+              <li class="nav-item px-3">
+                <router-link class="nav-link" to="/favorites">
+                  <span class="nav-span">Favorites</span>
+                </router-link>
+              </li>
+              <li class="nav-item ml-4 bordered-link">
+                <router-link class="nav-link" to="/join">JOIN</router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <router-view/>
   </div>
 </template>
-
-<script>
-import Main from "./components/Main.vue";
-
-export default {
-  name: "app",
-  components: {
-    Main
-  }
-};
-</script>
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700");
@@ -23,9 +62,20 @@ export default {
 #app {
   font-family: "Montserrat", Helvetica, sans-serif;
   font-size: 16px;
-  background: #000000 url("/assets/img/pattern.png") top right repeat;
+  background: #000000 url("~/public/pattern.png") top right repeat;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+.main-container {
+  padding: 20px;
+  width: 90%;
+  height: auto;
+  position: relative;
+  left: 80px;
+  right: 80px;
+  z-index: 1;
+  background-color: #ffffff;
 }
 
 h1,
@@ -66,7 +116,7 @@ input[type="number"] {
 
 /* MODAL CLOSE */
 .close {
-  color: #FFC80A;
+  color: #ffc80a;
   font-size: 3rem;
   position: relative;
   top: 3.7vh;
@@ -168,5 +218,52 @@ input[type="number"] {
     4px -4px 0 #ffc80a, 4px -6px 0 #ffc80a, 4px -8px 0 #ffc80a;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+/* NAVIGATION */
+.logo-container {
+  margin-top: 10px;
+  padding-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.logo-container .logo {
+  margin: -10px;
+}
+
+.nav-item {
+  padding-top: 20px;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  line-height: 14px;
+  color: #fff;
+  cursor: default;
+}
+
+.nav-link .nav-span,
+.nav-link .nav-span:after,
+.nav-link .nav-span:before {
+  transition: all 0.2s;
+}
+
+.nav-link .nav-span:hover {
+  padding-bottom: 5px;
+  border-bottom: 3px solid #ffc80a;
+}
+
+.nav-link .nav-span.active {
+  border-bottom: 3px solid #ffc80a;
+}
+
+.bordered-link {
+  margin-top: 10px;
+  height: 51px;
+  width: 130px;
+  border-radius: 34px;
+  border: 3px solid #ffc80a;
+  padding: 10px;
+  text-align: center;
+  line-height: 10px;
 }
 </style>

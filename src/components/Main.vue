@@ -108,9 +108,9 @@
               </b-modal>-->
             </div>
 
-            <img class="img-fluid cap-bottom" src="assets/img/cap.png" alt="cap">
+            <img class="img-fluid cap-bottom" src="cap.png" alt="cap">
             <div class="col-xl-4 col-md-6 col-xs-12 side-container">
-              <img class="img-fluid cap-top" src="assets/img/cap.png" alt="cap">
+              <img class="img-fluid cap-top" src="cap.png" alt="cap">
               <h3 class="crate-heading">Crate</h3>
 
               <!-- CRATE TABS -->
@@ -168,10 +168,10 @@
 </template>
 
 <script>
-import BeerModal from './BeerModal';
+import BeerModal from "./BeerModal";
 
 export default {
-  name: 'Main',
+  name: "Main",
   components: {
     BeerModal
   },
@@ -181,7 +181,7 @@ export default {
       loading: true,
       errored: false,
       modalShow: false,
-      selectedBeer: '',     
+      selectedBeer: ""
     };
   },
   methods: {
@@ -207,18 +207,6 @@ export default {
 
 <style scoped>
 /* === MAIN === */
-
-.main-container {
-  margin-top: -5rem;
-  padding: 20px;
-  width: 90%;
-  height: auto;
-  position: relative;
-  left: 80px;
-  right: 80px;
-  z-index: 1;
-  background-color: #ffffff;
-}
 
 .main-content {
   padding-top: 20px;
@@ -258,10 +246,11 @@ export default {
 }
 
 .card-text-container {
-  word-break: keep-all;  
+  word-break: keep-all;
 }
 
-.ibu-span, .abv-span {
+.ibu-span,
+.abv-span {
   color: #292929;
 }
 
@@ -339,5 +328,4 @@ export default {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-
 </style>
