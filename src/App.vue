@@ -68,6 +68,7 @@
 }
 
 .main-container {
+  margin-top: -5rem;
   padding: 20px;
   width: 90%;
   height: auto;
@@ -232,6 +233,10 @@ input[type="number"] {
   margin: -10px;
 }
 
+.logo {
+  padding-left: 4px;
+}
+
 .nav-item {
   padding-top: 20px;
   font-weight: bold;
@@ -265,5 +270,37 @@ input[type="number"] {
   padding: 10px;
   text-align: center;
   line-height: 10px;
+}
+
+/* ===  HERO SECTION === */
+.hero {
+  margin-top: 95px;
+}
+
+.beerster {
+  font-size: 14px;
+  letter-spacing: 2.8px;
+  line-height: 17px;
+}
+
+.heading-join,
+.favourites-heading,
+.joinup-heading {
+  padding-top: 25px;
+  font-size: 90px;
+  line-height: 90px;
+}
+
+.beerup-button {
+  margin-top: 35px;
+  height: 48px;
+  width: 172px;
+  border-radius: 49.5px;
+  background-color: #ffc80a;
+  color: #292929;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2.4px;
+  line-height: 14px;
 }
 </style>

@@ -3,6 +3,23 @@
     <!-- Beer Modal -->
     <BeerModal :data="selectedBeer"></BeerModal>
 
+    <!-- HERO SECTION
+    =============================================-->
+    <section class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-8 col-md-12 join-container">
+            <h5 class="beerster">THE BEERSTER PRO 2.0</h5>
+            <h1 class="heading-join">JOIN OUR FAMOUS BEERUP!</h1>
+            <button type="button" class="btn beerup-button">JOIN BEERUP</button>
+          </div>
+          <div class="col-xl-4 col-md-12 clearfix">
+            <img class="illustration float-right" src="illustration.png" alt="Beerup Illustration">
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Will show up if there is an error -->
     <section v-if="errored">
       <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
@@ -206,7 +223,7 @@ export default {
 
 
 <style scoped>
-/* === MAIN === */
+/* === MAIN SECTION === */
 
 .main-content {
   padding-top: 20px;

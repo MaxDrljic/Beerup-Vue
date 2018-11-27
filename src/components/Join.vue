@@ -1,140 +1,151 @@
 <template>
-  <!-- MAIN SECTION
+  <!-- HERO SECTION
   =============================================-->
-  <section>
-    <div class="main-container">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-3"></div>
-          <div class="col-xl-6 main-content">
-            <h2 class="join-heading">Quick, join up before we
-              <br>drink all the beer!
-            </h2>
+  <div>
+    <Hero title="JOIN UP!"></Hero>
 
-            <form class="join-form" @submit.prevent="processForm">
-              <div class="form-group pt-5">
-                <label class="pb-4" for="fullName">PERSONAL INFORMATION</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="fullName"
-                  id="fullName"
-                  v-model="user.fullName"
-                  aria-describedby="fullNameHelp"
-                  placeholder="Full name"
-                  required
-                >
-              </div>
-              <div class="form-group pt-5">
-                <label class="pb-4" for="contact">CONTACT INFORMATION</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  id="email"
-                  v-model="user.email"
-                  placeholder="Email"
-                  required
-                >
-              </div>
-              <div class="form-group pt-4">
-                <input
-                  type="number"
-                  class="form-control"
-                  name="phone"
-                  id="phone"
-                  v-model="user.phone"
-                  placeholder="Phone Number"
-                >
-              </div>
-              <div class="form-check pt-5">
-                <p class="rsvp">RSVP</p>
-                <input
-                  class="styled-radio form-check-input"
-                  type="radio"
-                  name="rsvp"
-                  id="rsvp1"
-                  v-model="user.rsvp1"
-                  value="option1"
-                  checked
-                >
-                <label class="form-check-label" for="rsvp1">I’m coming!</label>
-              </div>
-              <div class="form-check pt-2">
-                <input
-                  class="styled-radio form-check-input"
-                  type="radio"
-                  name="rsvp"
-                  id="rsvp2"
-                  v-model="user.rsvp2"
-                  value="option2"
-                >
-                <label class="form-check-label" for="rsvp2">Maybe?</label>
-              </div>
-              <div class="form-check pt-2">
-                <input
-                  class="styled-radio form-check-input"
-                  type="radio"
-                  name="rsvp"
-                  id="rsvp3"
-                  v-model="user.rsvp3"
-                  value="option3"
-                >
-                <label class="form-check-label" for="rsvp3">Can’t make it</label>
-              </div>
+    <!-- MAIN SECTION
+    =============================================-->
+    <section>
+      <div class="main-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-3"></div>
+            <div class="col-xl-6 main-content">
+              <h2 class="join-heading">Quick, join up before we
+                <br>drink all the beer!
+              </h2>
 
-              <div class="form-group pt-5">
-                <textarea
-                  class="form-control"
-                  name="message"
-                  id="message"
-                  v-model="user.message"
-                  rows="4"
-                  placeholder="Something you’d like to add?"
-                ></textarea>
-              </div>
+              <form class="join-form" @submit.prevent="processForm">
+                <div class="form-group pt-5">
+                  <label class="pb-4" for="fullName">PERSONAL INFORMATION</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="fullName"
+                    id="fullName"
+                    v-model="user.fullName"
+                    aria-describedby="fullNameHelp"
+                    placeholder="Full name"
+                    required
+                  >
+                </div>
+                <div class="form-group pt-5">
+                  <label class="pb-4" for="contact">CONTACT INFORMATION</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    v-model="user.email"
+                    placeholder="Email"
+                    required
+                  >
+                </div>
+                <div class="form-group pt-4">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="phone"
+                    id="phone"
+                    v-model="user.phone"
+                    placeholder="Phone Number"
+                  >
+                </div>
+                <div class="form-check pt-5">
+                  <p class="rsvp">RSVP</p>
+                  <input
+                    class="styled-radio form-check-input"
+                    type="radio"
+                    name="rsvp"
+                    id="rsvp1"
+                    v-model="user.rsvp1"
+                    value="option1"
+                    checked
+                  >
+                  <label class="form-check-label" for="rsvp1">I’m coming!</label>
+                </div>
+                <div class="form-check pt-2">
+                  <input
+                    class="styled-radio form-check-input"
+                    type="radio"
+                    name="rsvp"
+                    id="rsvp2"
+                    v-model="user.rsvp2"
+                    value="option2"
+                  >
+                  <label class="form-check-label" for="rsvp2">Maybe?</label>
+                </div>
+                <div class="form-check pt-2">
+                  <input
+                    class="styled-radio form-check-input"
+                    type="radio"
+                    name="rsvp"
+                    id="rsvp3"
+                    v-model="user.rsvp3"
+                    value="option3"
+                  >
+                  <label class="form-check-label" for="rsvp3">Can’t make it</label>
+                </div>
 
-              <div class="form-check pt-5">
-                <input
-                  class="styled-checkbox form-check-input"
-                  type="checkbox"
-                  value
-                  name="subscribe1"
-                  id="subscribe1"
-                  v-model="user.subscribe1"
-                  checked
-                >
-                <label class="form-check-label" for="subscribe1">Let me know about future beerups!</label>
-              </div>
-              <div class="form-check pt-3">
-                <input
-                  class="styled-checkbox form-check-input"
-                  type="checkbox"
-                  value
-                  name="subscribe2"
-                  id="subscribe2"
-                  v-model="user.subscribe2"
-                >
-                <label
-                  class="form-check-label"
-                  for="subscribe2"
-                >Remind me one day before this beerup!</label>
-              </div>
+                <div class="form-group pt-5">
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    id="message"
+                    v-model="user.message"
+                    rows="4"
+                    placeholder="Something you’d like to add?"
+                  ></textarea>
+                </div>
 
-              <button type="submit" @click="processForm()" class="btn join-up">JOIN UP</button>
-            </form>
+                <div class="form-check pt-5">
+                  <input
+                    class="styled-checkbox form-check-input"
+                    type="checkbox"
+                    value
+                    name="subscribe1"
+                    id="subscribe1"
+                    v-model="user.subscribe1"
+                    checked
+                  >
+                  <label class="form-check-label" for="subscribe1">Let me know about future beerups!</label>
+                </div>
+                <div class="form-check pt-3">
+                  <input
+                    class="styled-checkbox form-check-input"
+                    type="checkbox"
+                    value
+                    name="subscribe2"
+                    id="subscribe2"
+                    v-model="user.subscribe2"
+                  >
+                  <label
+                    class="form-check-label"
+                    for="subscribe2"
+                  >Remind me one day before this beerup!</label>
+                </div>
 
-            <img class="img-fluid cap-bottom" src="cap.png" alt="cap">
+                <button type="submit" @click="processForm()" class="btn join-up">JOIN UP</button>
+              </form>
+
+              <img class="img-fluid cap-bottom" src="cap.png" alt="cap">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>
+import Hero from "@/components/Hero.vue";
+
 export default {
   name: "Join",
+  components: {
+    Hero
+  },
   data() {
     return {
       user: {
@@ -178,6 +189,7 @@ export default {
 <style scoped>
 /* === JOIN ===  */
 .join-heading {
+  padding-top: 10px;
   color: #212121;
   font-size: 36px;
   font-weight: 600;
