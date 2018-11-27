@@ -158,6 +158,7 @@ export default {
       axios({
         method: "POST",
         url: "https://httpbin.org/post",
+        timeout: 5000,
         data: this.user,
         headers: { "content-type": "application/json" }
       }).then(
