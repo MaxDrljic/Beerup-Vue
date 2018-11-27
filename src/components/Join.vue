@@ -11,23 +11,41 @@
               <br>drink all the beer!
             </h2>
 
-            <form class="join-form">
+            <form class="join-form" @submit.prevent="processForm">
               <div class="form-group pt-5">
                 <label class="pb-4" for="fullName">PERSONAL INFORMATION</label>
                 <input
                   type="text"
                   class="form-control"
+                  name="fullName"
                   id="fullName"
+                  v-model="user.fullName"
                   aria-describedby="fullNameHelp"
                   placeholder="Full name"
+                  required
                 >
               </div>
               <div class="form-group pt-5">
                 <label class="pb-4" for="contact">CONTACT INFORMATION</label>
-                <input type="email" class="form-control" id="contact" placeholder="Email">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  v-model="user.email"
+                  placeholder="Email"
+                  required
+                >
               </div>
               <div class="form-group pt-4">
-                <input type="number" class="form-control" id="contact" placeholder="Phone Number">
+                <input
+                  type="number"
+                  class="form-control"
+                  name="phone"
+                  id="phone"
+                  v-model="user.phone"
+                  placeholder="Phone Number"
+                >
               </div>
               <div class="form-check pt-5">
                 <p class="rsvp">RSVP</p>
@@ -36,6 +54,7 @@
                   type="radio"
                   name="rsvp"
                   id="rsvp1"
+                  v-model="user.rsvp1"
                   value="option1"
                   checked
                 >
@@ -47,6 +66,7 @@
                   type="radio"
                   name="rsvp"
                   id="rsvp2"
+                  v-model="user.rsvp2"
                   value="option2"
                 >
                 <label class="form-check-label" for="rsvp2">Maybe?</label>
@@ -57,6 +77,7 @@
                   type="radio"
                   name="rsvp"
                   id="rsvp3"
+                  v-model="user.rsvp3"
                   value="option3"
                 >
                 <label class="form-check-label" for="rsvp3">Can’t make it</label>
@@ -65,7 +86,9 @@
               <div class="form-group pt-5">
                 <textarea
                   class="form-control"
-                  id="textarea"
+                  name="message"
+                  id="message"
+                  v-model="user.message"
                   rows="4"
                   placeholder="Something you’d like to add?"
                 ></textarea>
@@ -76,7 +99,9 @@
                   class="styled-checkbox form-check-input"
                   type="checkbox"
                   value
+                  name="subscribe1"
                   id="subscribe1"
+                  v-model="user.subscribe1"
                   checked
                 >
                 <label class="form-check-label" for="subscribe1">Let me know about future beerups!</label>
@@ -86,7 +111,9 @@
                   class="styled-checkbox form-check-input"
                   type="checkbox"
                   value
+                  name="subscribe2"
                   id="subscribe2"
+                  v-model="user.subscribe2"
                 >
                 <label
                   class="form-check-label"
@@ -94,7 +121,7 @@
                 >Remind me one day before this beerup!</label>
               </div>
 
-              <button type="submit" class="btn join-up">JOIN UP</button>
+              <button type="submit" @click="processForm()" class="btn join-up">JOIN UP</button>
             </form>
 
             <img class="img-fluid cap-bottom" src="cap.png" alt="cap">
@@ -107,7 +134,43 @@
 
 <script>
 export default {
-  name: "Join"
+  name: "Join",
+  data() {
+    return {
+      user: {
+        fullName: "",
+        email: "",
+        phone: null,
+        rsvp1: true,
+        rsvp2: false,
+        rsvp3: false,
+        message: "",
+        subscribe1: true,
+        subscribe2: false
+      },
+      response: ""
+    };
+  },
+  methods: {
+    /* When Join Now button is clicked, Axios POST call is triggered */
+    /* Axios call returns entered values in the console */
+    processForm: function() {
+      axios({
+        method: "POST",
+        url: "https://httpbin.org/post",
+        data: this.user,
+        headers: { "content-type": "application/json" }
+      }).then(
+        result => {
+          this.response = result.data;
+          console.log(this.response.data);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
+  }
 };
 </script>
 
