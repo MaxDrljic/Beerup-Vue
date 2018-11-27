@@ -74,8 +74,8 @@ export default {
 }
 
 .heart-outline {
-  position: relative;
-  bottom: 13vh;
+  position: absolute;
+  top: -11vh;
   text-decoration: none;
   color: darkgray;
   font-size: 2.6em;
@@ -87,7 +87,7 @@ export default {
 }
 
 .beer-modal-img {
-  width: 60%;
+  width: 160px;
   height: 60%;
 }
 
