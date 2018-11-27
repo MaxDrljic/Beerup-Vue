@@ -64,6 +64,15 @@ input[type="number"] {
   line-height: 19px;
 }
 
+/* MODAL CLOSE */
+.close {
+  color: #FFC80A;
+  font-size: 3rem;
+  position: relative;
+  top: 3.7vh;
+  padding-right: 2vw;
+}
+
 /* RADIO INPUT */
 .styled-radio {
   position: absolute;

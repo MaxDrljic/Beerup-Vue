@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!-- Beer Modal -->
+    <BeerModal :data="selectedBeer"></BeerModal>
+
     <!-- Will show up if there is an error -->
     <section v-if="errored">
       <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
@@ -20,7 +23,7 @@
                       <b-card>
                         <div class="row no-gutters">
                           <div class="col-auto">
-                            <b-link href="#" v-b-modal="'beerModal'">
+                            <b-link href="#" v-b-modal="'beerModal'" @click="sendInfo(beer)">
                               <img :src="beer.image_url" class="card-img-top" alt="Beer Image">
                             </b-link>
                           </div>
@@ -47,7 +50,7 @@
 
               <!-- BEER MODAL
               =============================================-->
-              <b-modal
+              <!-- <b-modal
                 id="beerModal"
                 hide-footer
                 tabindex="-1"
@@ -102,7 +105,7 @@
                     </div>
                   </div>
                 </div>
-              </b-modal>
+              </b-modal>-->
             </div>
 
             <img class="img-fluid cap-bottom" src="assets/img/cap.png" alt="cap">
@@ -165,15 +168,26 @@
 </template>
 
 <script>
+import BeerModal from './BeerModal';
+
 export default {
-  name: "Main",
+  name: 'Main',
+  components: {
+    BeerModal
+  },
   data() {
     return {
       info: "",
       loading: true,
       errored: false,
-      modalShow: false
+      modalShow: false,
+      selectedBeer: '',     
     };
+  },
+  methods: {
+    sendInfo(beer) {
+      this.selectedBeer = beer;
+    }
   },
   mounted() {
     axios
