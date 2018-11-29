@@ -51,6 +51,68 @@
       </nav>
     </header>
     <router-view/>
+
+    <!-- FOOTER
+    =============================================-->
+    <footer>
+      <div class="container footer-container">
+        <div class="row">
+          <!-- LOGO -->
+          <div class="col-xl-4 main-logo-container">
+            <a class="symbol-footer" href="/">
+              <img src="symbol-footer.svg" alt="Symbol">
+            </a>
+            <a class="logo" href="/">
+              <img src="logo.svg" alt="Logo">
+            </a>
+          </div>
+          <!-- FOOTER NAVBAR -->
+          <div class="col-xl-4 col-md-2">
+            <nav class="navbar footer-navbar navbar-expand-lg bg-transparent">
+              <ul class="navbar-nav footer-links ml-auto">
+                <li class="nav-item px-3 active">
+                  <a class="nav-link" href="#">
+                    <span class="nav-span">HOME</span>
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item px-3">
+                  <a class="nav-link" href="#">
+                    <span class="nav-span">FAVORITES</span>
+                  </a>
+                </li>
+                <li class="nav-item ml-4">
+                  <a class="nav-link join-link" href="#">
+                    <span class="nav-span join-span">JOIN</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- SOCIAL MEDIA ICONS -->
+          <div class="col-xl-4 col-md-10 clearfix social-container">
+            <a href="https://www.facebook.com" class="badge social facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" class="badge social twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/" class="badge social linkedin">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.pinterest.com/" class="badge social pinterest">
+              <i class="fab fa-pinterest-p"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div class="container copyright-container">
+        <p class="copyright-text text-center">&copy; 2018 All rights reserved.</p>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -407,6 +469,79 @@ input[type="number"] {
   padding: 0;
   margin: 0;
   margin: 20px 0 0 80px;
+}
+
+/* === FOOTER === */
+
+footer {
+  margin-top: 5%;
+}
+
+.footer-container {
+  padding-bottom: 3%;
+  border-bottom: 1px solid rgba(255, 200, 10, 0.32);
+}
+
+.symbol-footer {
+  padding: 0 5px 5px 0;
+}
+
+.footer-navbar {
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 2.4px;
+}
+
+/* SOCIAL MEDIA ICONS */
+.badge.social {
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 42px;
+  padding: 0 8%;
+}
+
+.badge.social i {
+  float: right;
+}
+
+.social-container {
+  padding-left: 13%;
+}
+
+.badge.social.facebook:hover {
+  color: #3b5998;
+}
+
+.badge.social.twitter:hover {
+  color: #55acee;
+}
+
+.badge.social.linkedin:hover {
+  color: #0078b5;
+}
+
+.badge.social.pinterest:hover {
+  color: #bd081b;
+}
+
+/* COPYRIGHT */
+
+.copyright-container {
+  margin-bottom: -5%;
+  padding-top: 0.5%;
+  padding-bottom: 3%;
+}
+
+.copyright-text {
+  padding-top: 22px;
+  color: #9fa3a7;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  line-height: 22px;
 }
 
 /* CAP IMAGES */
