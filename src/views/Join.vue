@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="join">
     <Join/>
   </div>
 </template>
@@ -9,7 +9,7 @@
 import Join from "@/components/Join.vue";
 
 export default {
-  name: "home",
+  name: "join",
   components: {
     Join
   }

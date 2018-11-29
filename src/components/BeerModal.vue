@@ -10,7 +10,21 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <a class="heart-outline" href="#">&#x2661;</a>
+          <button
+            id="favorite"
+            class="heart-outline"
+            @click="toggleFavorite(data)"
+            :class="{ favorited: data.id }"
+          >&#x2661;</button>
+
+          <!-- Tooltip Favorite -->
+          <b-tooltip
+            click
+            :favorited.sync="isFavorite"
+            ref="tooltip"
+            target="favorite"
+            placement="bottom"
+          >Added To Favorites</b-tooltip>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -59,8 +73,21 @@
 <script>
 export default {
   name: "BeerModal",
-  props: ['data']
-}
+  props: ["data"],
+  methods: {
+    toggleFavorite: function(data) {
+      this.$store.dispatch("toggleFavorite", data);
+    }
+  },
+  setFavorite: function(favorite) {
+    this.$store.favorites.push(favorite);
+  },
+  computed: {
+    isFavorite: function() {
+      return this.$store.getters.IS_FAVORITE;
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -70,10 +97,12 @@ export default {
   font-size: 2em;
   padding-right: 5% !important;
   padding-top: 5% !important;
-  color: #FFC80A;
+  color: #ffc80a;
 }
 
 .heart-outline {
+  border: none;
+  cursor: pointer;
   position: absolute;
   top: -11vh;
   text-decoration: none;
@@ -86,9 +115,14 @@ export default {
   color: rgba(255, 0, 0, 0.466);
 }
 
+.favorited {
+  text-decoration: none;
+  color: rgba(255, 0, 0, 0.466);
+}
+
 .beer-modal-img {
-  width: 160px;
-  height: 60%;
+  width: 50%;
+  height: 50%;
 }
 
 .beer-modal-container {
@@ -103,16 +137,18 @@ export default {
   line-height: 36px;
 }
 
-.ibu, .abv {
-  color: #9FA3A7;
+.ibu,
+.abv {
+  color: #9fa3a7;
   font-family: "Open Sans";
   font-size: 14px;
   line-height: 26px;
 }
 
-.ibu-span, .abv-span {
+.ibu-span,
+.abv-span {
   padding-left: 20px;
-  color: #3F4750;
+  color: #3f4750;
   font-size: 14px;
   font-weight: bold;
   line-height: 26px;

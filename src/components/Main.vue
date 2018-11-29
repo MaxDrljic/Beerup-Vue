@@ -35,7 +35,7 @@
               <h3 class="beer-heading">Beer</h3>
               <div class="container">
                 <div class="row">
-                  <div class="col-md-3 p-0" v-for="beer in info" :key="beer.id">
+                  <div class="col-md-3 p-0" v-for="beer in beers" :key="beer.id">
                     <b-card-group deck>
                       <b-card>
                         <div class="row no-gutters">
@@ -176,6 +176,23 @@
                   </a>
                 </li>
               </ul>
+
+              <!-- TAB CONTENT -->
+              <div class="tab-content text-right">
+                <div
+                  class="tab-pane active"
+                  id="current-tab"
+                  role="tabpanel"
+                  aria-labelledby="current-crate"
+                >
+                  <img class="img-fluid crate-image" src="crate.png" alt="Beer crate">
+                </div>
+              </div>
+
+              <div class="crate-text-container text-center">
+                <p class="crate-instructions">Add a beer to have it appear in the crate.</p>
+                <small class="name-caption">— Captain Obvious</small>
+              </div>
             </div>
           </div>
         </div>
@@ -185,6 +202,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import BeerModal from "./BeerModal";
 
 export default {
@@ -194,7 +212,6 @@ export default {
   },
   data() {
     return {
-      info: "",
       loading: true,
       errored: false,
       modalShow: false,
@@ -207,142 +224,18 @@ export default {
     }
   },
   mounted() {
-    axios
-      .get("https://api.punkapi.com/v2/beers?page=1&per_page=15&ibu_gt=30")
-      .then(response => {
-        this.info = response.data;
-      })
+    this.$store
+      .dispatch("loadBeers")
       .catch(error => {
         console.log(error);
         this.errored = true;
       })
       .finally(() => (this.loading = false));
-  }
+  },
+  computed: mapState(["beers"])
 };
 </script>
 
 
 <style scoped>
-/* === MAIN SECTION === */
-
-.main-content {
-  padding-top: 20px;
-}
-
-.beer-heading,
-.crate-heading {
-  margin-top: 2.5rem;
-  color: #212121;
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 48px;
-}
-
-.card-group {
-  max-width: 25%;
-  padding-top: 10px;
-}
-
-.card {
-  width: 20%;
-  height: 20%;
-}
-
-.card-img-top {
-  width: 100%;
-  height: 9vw;
-  object-fit: cover;
-}
-
-.beer-title {
-  color: #292929;
-  font-size: 0.8vw;
-  font-weight: bold;
-  line-height: 17px;
-  text-transform: uppercase;
-}
-
-.card-text-container {
-  word-break: keep-all;
-}
-
-.ibu-span,
-.abv-span {
-  color: #292929;
-}
-
-/* CRATE SECTION */
-
-.crate-heading {
-  padding: 1rem 0 0 85px;
-}
-
-.nav-item.crate-item a,
-.crate-span {
-  margin: 0;
-  margin: 8px;
-  padding: 0;
-  padding-bottom: 25px;
-  color: #3f4750 !important;
-  font-size: 14px;
-  letter-spacing: 2.8px;
-  line-height: 17px;
-}
-
-.crate-tabs {
-  margin-left: 30px;
-}
-
-.nav-link .crate-span,
-.nav-link .crate-span:after,
-.nav-link .crate-span:before {
-  transition: all 0.2s;
-}
-
-.nav-link .crate-span:hover {
-  padding-bottom: 5px;
-  border-bottom: 4px solid #f05638;
-}
-
-.nav-link .crate-span.active {
-  border-bottom: 4px solid #f05638;
-}
-
-.crate-instructions {
-  font-family: "Open Sans";
-  color: #3f4750;
-  font-size: 12px;
-  line-height: 32px;
-}
-
-.name-caption {
-  color: #9fa3a7;
-  font-family: "Open Sans";
-  font-size: 12px;
-  line-height: 32px;
-}
-
-.crate-text-container {
-  padding: 0;
-  margin: 0;
-  margin: 20px 0 0 80px;
-}
-
-/* CAP IMAGES */
-.cap-top {
-  position: relative;
-  top: -35px;
-  left: 255px;
-}
-
-.cap-bottom {
-  position: absolute;
-  bottom: -25px;
-  left: 566px;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
 </style>

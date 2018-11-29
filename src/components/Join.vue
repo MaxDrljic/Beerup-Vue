@@ -187,6 +187,10 @@ export default {
 </script>
 
 <style scoped>
+.main-container {
+  margin-top: -22rem;
+}
+
 /* === JOIN ===  */
 .join-heading {
   padding-top: 10px;
