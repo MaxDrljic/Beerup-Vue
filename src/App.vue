@@ -32,13 +32,12 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item px-3 active">
-                <router-link class="nav-link" to="/">
+                <router-link tag="span" class="nav-link" to="/">
                   <span class="nav-span">Home</span>
-                  <span class="sr-only">(current)</span>
                 </router-link>
               </li>
               <li class="nav-item px-3">
-                <router-link class="nav-link" to="/favorites">
+                <router-link tag="span" class="nav-link" to="/favorites">
                   <span class="nav-span">Favorites</span>
                 </router-link>
               </li>
@@ -71,20 +70,19 @@
             <nav class="navbar footer-navbar navbar-expand-lg bg-transparent">
               <ul class="navbar-nav footer-links ml-auto">
                 <li class="nav-item px-3 active">
-                  <a class="nav-link" href="#">
+                  <router-link tag="span" class="nav-link" to="/">
                     <span class="nav-span">HOME</span>
-                    <span class="sr-only">(current)</span>
-                  </a>
+                  </router-link>
                 </li>
                 <li class="nav-item px-3">
-                  <a class="nav-link" href="#">
+                  <router-link tag="span" class="nav-link" to="/favorites">
                     <span class="nav-span">FAVORITES</span>
-                  </a>
+                  </router-link>
                 </li>
                 <li class="nav-item ml-4">
-                  <a class="nav-link join-link" href="#">
+                  <router-link tag="span" class="nav-link join-link" to="/join">
                     <span class="nav-span join-span">JOIN</span>
-                  </a>
+                  </router-link>
                 </li>
               </ul>
             </nav>
@@ -316,11 +314,21 @@ input[type="number"] {
 
 .nav-link .nav-span:hover {
   padding-bottom: 5px;
+  color: rgb(177, 174, 174);
+  cursor: pointer;
+}
+
+.nav-link.router-link-active.router-link-exact-active {
   border-bottom: 3px solid #ffc80a;
 }
 
-.nav-link .nav-span.active {
-  border-bottom: 3px solid #ffc80a;
+.active,
+span.nav-span {
+  font-size: 12px;
+}
+
+.join-span.router-link-active.router-link-exact-active {
+  border: none;
 }
 
 .bordered-link {
@@ -542,6 +550,83 @@ footer {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 22px;
+}
+
+/* === BEER MODAL === */
+
+.heart-outline {
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: -11vh;
+  text-decoration: none;
+  color: darkgray;
+  font-size: 2.6em;
+}
+
+.heart-outline:hover {
+  text-decoration: none;
+  color: rgba(255, 0, 0, 0.466);
+}
+
+.favorited {
+  text-decoration: none;
+  color: rgba(255, 0, 0, 0.466);
+}
+
+.beer-modal-img {
+  width: 50%;
+  height: 50%;
+}
+
+.crate-modal-img {
+  width: 50%;
+  height: 80%;
+}
+
+.beer-modal-container {
+  margin-left: -6%;
+}
+
+.beer-modal-header {
+  text-transform: uppercase;
+  margin-bottom: -3px;
+  color: #212121;
+  font-size: 36px;
+  line-height: 36px;
+}
+
+.ibu,
+.abv {
+  color: #9fa3a7;
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.ibu-span,
+.abv-span {
+  padding-left: 5px;
+  color: #3f4750;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 26px;
+}
+
+.fav-ibu,
+.fav-abv {
+  word-break: keep-all;
+}
+
+p.beer-modal-paragraph {
+  color: #111;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+}
+
+.add-to-crate {
+  margin-right: -35%;
 }
 
 /* CAP IMAGES */

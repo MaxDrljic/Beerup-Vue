@@ -26,6 +26,8 @@
             placement="bottom"
           >Added To Favorites</b-tooltip>
         </div>
+
+        <!-- Modal Body -->
         <div class="modal-body">
           <div class="row">
             <div class="col-xl-6 col-md-6">
@@ -91,78 +93,4 @@ export default {
 </script>
 
 <style scoped>
-/* === BEER MODAL === */
-
-.close {
-  font-size: 2em;
-  padding-right: 5% !important;
-  padding-top: 5% !important;
-  color: #ffc80a;
-}
-
-.heart-outline {
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: -11vh;
-  text-decoration: none;
-  color: darkgray;
-  font-size: 2.6em;
-}
-
-.heart-outline:hover {
-  text-decoration: none;
-  color: rgba(255, 0, 0, 0.466);
-}
-
-.favorited {
-  text-decoration: none;
-  color: rgba(255, 0, 0, 0.466);
-}
-
-.beer-modal-img {
-  width: 50%;
-  height: 50%;
-}
-
-.beer-modal-container {
-  margin-left: -6%;
-}
-
-.beer-modal-header {
-  text-transform: uppercase;
-  margin-bottom: -3px;
-  color: #212121;
-  font-size: 36px;
-  line-height: 36px;
-}
-
-.ibu,
-.abv {
-  color: #9fa3a7;
-  font-family: "Open Sans";
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.ibu-span,
-.abv-span {
-  padding-left: 20px;
-  color: #3f4750;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 26px;
-}
-
-p.beer-modal-paragraph {
-  color: #111;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  line-height: 26px;
-}
-
-.add-to-crate {
-  margin-top: -80%;
-  margin-right: -28%;
-}
 </style>

@@ -63,138 +63,13 @@
                     </b-card-group>
                   </div>
                 </div>
+                <!-- Infinite Scroll Trigger -->
                 <Trigger @triggerIntersected="loadMore"></Trigger>
               </div>
-
-              <!-- BEER MODAL
-              =============================================-->
-              <!-- <b-modal
-                id="beerModal"
-                hide-footer
-                tabindex="-1"
-                role="dialog"
-                aria-labelledby="exampleModalCenterTitle"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <a class="heart-outline" href="#">&#x2661;</a>
-                    </div>
-                    <div class="modal-body">
-                      <div class="row">
-                        <div class="col-xl-6 col-md-6">
-                          <img
-                            class="beer-modal-img img-fluid"
-                            src="/assets/img/beer.svg"
-                            alt="beer"
-                          >
-                        </div>
-                        <div class="col-xl-6 col-md-6 beer-modal-container pt-4">
-                          <h4 class="beer-modal-header d-none d-sm-block">BEER</h4>
-                          <h4 class="beer-modal-header d-none d-sm-block pb-4">NAME</h4>
-                          <h4 class="beer-modal-header d-block d-sm-none">BEER NAME</h4>
-                          <small class="ibu pt-4">
-                            IBU
-                            <span class="ibu-span">35</span>
-                          </small>
-                          <br class="d-none d-sm-block">
-                          <small class="abv">
-                            ABV
-                            <span class="abv-span">5,6%</span>
-                          </small>
-                          <p class="beer-modal-paragraph pt-4">
-                            Our scene-stealing flagship is an India Pale Ale
-                            <br>that has
-                            become
-                            a
-                            byword
-                            for craft beer
-                            <br>rebellion;
-                            synonymous with the insurgency
-                            <br>against mass-produced, lowest common
-                            <br>denominator beer.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="modal-footer mx-auto mb-4">
-                      <button type="button" class="btn beerup-button add-to-crate">ADD TO CRATE</button>
-                    </div>
-                  </div>
-                </div>
-              </b-modal>-->
             </div>
 
-            <img class="img-fluid cap-bottom" src="cap.png" alt="cap">
-            <div class="col-xl-4 col-md-6 col-xs-12 side-container">
-              <img class="img-fluid cap-top" src="cap.png" alt="cap">
-              <h3 class="crate-heading">Crate</h3>
-
-              <!-- CRATE TABS -->
-              <ul
-                class="nav nav-tabs justify-content-center crate-tabs"
-                id="crateTab"
-                role="tablist"
-              >
-                <li class="nav-item crate-item">
-                  <a
-                    class="nav-link crate-link active"
-                    id="current-crate"
-                    data-toggle="tab"
-                    href="#current-crate"
-                    role="tab"
-                    aria-controls="current-crate"
-                    aria-selected="true"
-                  >
-                    <span class="crate-span">ONE</span>
-                  </a>
-                </li>
-                <li class="nav-item crate-item">
-                  <a
-                    class="nav-link crate-link"
-                    id="two-crate"
-                    data-toggle="tab"
-                    href="#two-crate"
-                    role="tab"
-                    aria-controls="two-crate"
-                    aria-selected="false"
-                  >
-                    <span class="crate-span">TWO</span>
-                  </a>
-                </li>
-                <li class="nav-item crate-item">
-                  <a
-                    class="nav-link crate-link"
-                    id="three-crate"
-                    data-toggle="tab"
-                    href="#three-crate"
-                    role="tab"
-                    aria-controls="three-crate"
-                    aria-selected="false"
-                  >
-                    <span class="crate-span">THREE</span>
-                  </a>
-                </li>
-              </ul>
-
-              <!-- TAB CONTENT -->
-              <div class="tab-content text-right">
-                <div
-                  class="tab-pane active"
-                  id="current-tab"
-                  role="tabpanel"
-                  aria-labelledby="current-crate"
-                >
-                  <img class="img-fluid crate-image" src="crate.png" alt="Beer crate">
-                </div>
-              </div>
-
-              <div class="crate-text-container text-center">
-                <p class="crate-instructions">Add a beer to have it appear in the crate.</p>
-                <small class="name-caption">— Captain Obvious</small>
-              </div>
-            </div>
+            <!-- Crate Section -->
+            <Crate></Crate>
           </div>
         </div>
       </div>
@@ -205,12 +80,14 @@
 <script>
 import { mapState } from "vuex";
 import BeerModal from "./BeerModal";
+import Crate from "./Crate";
 import Trigger from "./Trigger";
 
 export default {
   name: "Main",
   components: {
     BeerModal,
+    Crate,
     Trigger
   },
   data() {

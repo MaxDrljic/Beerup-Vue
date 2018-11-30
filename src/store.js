@@ -9,6 +9,15 @@ export default new Vuex.Store({
     page: 1,
     beers: [],
     favorites: [],
+    activeCrate1: true,
+    activeCrate2: false,
+    activeCrate3: false,
+    crate1: [],
+    crate2: [],
+    crate3: [],
+    crateCount1: 0,
+    crateCount2: 0,
+    crateCount3: 0
   },
   getters: {
     IS_FAVORITE: state => {
@@ -34,12 +43,44 @@ export default new Vuex.Store({
     REMOVE_FAVORITE: (state, payload) => {
       let index = state.favorites.findIndex(favorite => favorite.id === payload);
       state.favorites.splice(index, 1);
+    },
+    ADD_TO_CRATE: (state, payload) => {
+      state.favorites.find(favorite => favorite.data === payload);
+      if (state.activeCrate1 == true) {
+        state.crate1.push(payload)
+        state.crateCount1 += 1;
+        state.activeCrate2 = false;
+        state.activeCrate3 = false;
+      } else if (state.activeCrate2 == true) {
+        state.crate2.push(payload)
+        state.crateCount2 += 1;
+        state.activeCrate1 = false;
+        state.activeCrate3 = false;
+      } else {
+        state.crate3.push(payload)
+        state.crateCount3 += 1;
+        state.activeCrate1 = false;
+        state.activeCrate2 = false;
+      }  
+    },
+    SET_ACTIVE_CRATE: (state) => {
+      if (state.activeCrate2 === false ) {
+        state.activeCrate2 = true
+        state.activeCrate1 = false;
+        state.activeCrate3 = false;
+      } else if (state.activeCrate3 == false){
+        state.activeCrate3 = true;
+        state.activeCrate1 = false;
+        state.activeCrate2 = false;
+      } else {
+        return "An error has occured!"
+      }
     }
   },
   actions: {
     loadBeers({ commit }) {
       axios
-      .get(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=15&ibu_gt=30`)
+      .get(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=20&ibu_gt=30`)
       .then(response => response.data)
       .then(beers => {
         commit('SET_BEERS', beers)
@@ -53,6 +94,12 @@ export default new Vuex.Store({
     },
     removeFavorite: (context, payload) => {
       context.commit("REMOVE_FAVORITE", payload)
-    } 
+    },
+    addToCrate: (context, payload) => {
+      context.commit("ADD_TO_CRATE", payload);
+    },
+    activeCrate: (context, payload) => {
+      context.commit("SET_ACTIVE_CRATE", payload);
+    }
   }
 })
