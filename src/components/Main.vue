@@ -35,7 +35,7 @@
               <h3 class="beer-heading">Beer</h3>
               <div class="container">
                 <div class="row">
-                  <div class="col-md-3 p-0" v-for="beer in beers" :key="beer.id">
+                  <div class="col-md-3 p-0 beer" v-for="beer in beers" :key="beer.id">
                     <b-card-group deck>
                       <b-card>
                         <div class="row no-gutters">
@@ -63,6 +63,7 @@
                     </b-card-group>
                   </div>
                 </div>
+                <Trigger @triggerIntersected="loadMore"></Trigger>
               </div>
 
               <!-- BEER MODAL
@@ -204,11 +205,13 @@
 <script>
 import { mapState } from "vuex";
 import BeerModal from "./BeerModal";
+import Trigger from "./Trigger";
 
 export default {
   name: "Main",
   components: {
-    BeerModal
+    BeerModal,
+    Trigger
   },
   data() {
     return {
@@ -221,16 +224,19 @@ export default {
   methods: {
     sendInfo(beer) {
       this.selectedBeer = beer;
+    },
+    async loadMore() {
+      this.$store
+        .dispatch("loadBeers")
+        .catch(error => {
+          console.log(error);
+          this.errored = true;
+        })
+        .finally(() => (this.loading = false));
     }
   },
   mounted() {
-    this.$store
-      .dispatch("loadBeers")
-      .catch(error => {
-        console.log(error);
-        this.errored = true;
-      })
-      .finally(() => (this.loading = false));
+    this.loadMore();
   },
   computed: mapState(["beers"])
 };

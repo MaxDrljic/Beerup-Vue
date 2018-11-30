@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    page: 1,
     beers: [],
     favorites: [],
   },
@@ -21,6 +22,7 @@ export default new Vuex.Store({
   mutations: {
     SET_BEERS: (state, beers) => {
       state.beers = beers
+      state.page += 1;
     },
     SET_FAVORITES: (state, favorites) => {
       state.favorites = favorites
@@ -37,7 +39,7 @@ export default new Vuex.Store({
   actions: {
     loadBeers({ commit }) {
       axios
-      .get("https://api.punkapi.com/v2/beers?page=1&per_page=15&ibu_gt=30")
+      .get(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=15&ibu_gt=30`)
       .then(response => response.data)
       .then(beers => {
         commit('SET_BEERS', beers)
