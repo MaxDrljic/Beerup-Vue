@@ -53,15 +53,21 @@
     <div class="tab-content text-right">
       <div class="tab-pane active" id="current-tab" role="tabpanel" aria-labelledby="current-crate">
         <img class="img-fluid crate-image" src="crate.png" alt="Beer crate">
-        <p class="crate-instructions text-center pt-3 ml-5 pl-4">Beers In Crate: {{ crateCount1 }}</p>
+        <p class="crate-instructions text-center pt-3 ml-5 pl-4">
+          <span class="beers-in-crate">Beers In Crate: {{ crateCount1 }}</span>
+        </p>
       </div>
       <div class="tab-pane" id="two-tab" role="tabpanel" aria-labelledby="two-crate">
         <img class="img-fluid crate-image" src="crate.png" alt="Beer crate">
-        <p class="crate-instructions text-center pt-3 ml-5 pl-4">Beers In Crate: {{ crateCount2 }}</p>
+        <p class="crate-instructions text-center pt-3 ml-5 pl-4">
+          <span class="beers-in-crate">Beers In Crate: {{ crateCount2 }}</span>
+        </p>
       </div>
       <div class="tab-pane" id="three-tab" role="tabpanel" aria-labelledby="three-crate">
         <img class="img-fluid crate-image" src="crate.png" alt="Beer crate">
-        <p class="crate-instructions text-center pt-3 ml-5 pl-4">Beers In Crate: {{ crateCount3 }}</p>
+        <p class="crate-instructions text-center pt-3 ml-5 pl-4">
+          <span class="beers-in-crate">Beers In Crate: {{ crateCount3 }}</span>
+        </p>
       </div>
     </div>
 

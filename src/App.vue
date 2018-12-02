@@ -861,8 +861,16 @@ p.beer-modal-paragraph {
   .beer-heading,
   .crate-heading {
     margin-top: 0.5rem;
-    padding-left: 40%;
+    padding-left: 15%;
     font-size: 24px;
+  }
+
+  .beer-title {
+    font-size: 12px;
+  }
+
+  .note {
+    font-size: 12px;
   }
 
   .card-group {
@@ -876,11 +884,19 @@ p.beer-modal-paragraph {
   }
 
   .card img {
-    width: 10rem;
+    width: 2rem;
+  }
+  .card-img-top {
+    width: 1vw;
+    height: 18vh;
+    object-fit: cover;
   }
 
-  .card-img-top {
-    padding: 0;
+  .ibu,
+  .abv {
+    padding-left: 1px;
+    font-size: 10px;
+    line-height: 26px;
   }
 
   /* CRATE */
@@ -888,13 +904,26 @@ p.beer-modal-paragraph {
     margin-left: 0;
   }
 
+  .crate-heading {
+    padding-left: 35%;
+  }
+
   .crate-image {
-    margin-right: 12%;
+    margin-right: 8%;
     transform: rotate(90deg);
   }
 
   .crate-text-container {
     margin: 0;
+  }
+
+  .beers-in-crate {
+    padding-right: 25%;
+    color: #111;
+  }
+
+  .crate-instructions {
+    padding-left: 0;
   }
 
   .tab-pane {
@@ -908,7 +937,7 @@ p.beer-modal-paragraph {
   }
 
   .ml-auto {
-    margin-left: 8.5rem !important;
+    margin-left: 7.3rem !important;
     text-align: center;
   }
 

@@ -19,12 +19,12 @@
           <div class="row">
             <div class="col-xl-8 col-md-6 col-xs-12 main-content">
               <h3 class="beer-heading">My favorite beers</h3>
-              <small class="text-muted">Note: Double-click to remove from favorites!</small>
+              <small class="text-muted note">Note: Double-click to remove from favorites!</small>
               <Sort></Sort>
               <div class="container">
                 <div class="row">
                   <div
-                    class="col-xl-3 col-md-6 p-0"
+                    class="col-xl-3 col-md-6 col-6 p-0"
                     v-for="favorite in favorites"
                     :key="favorite.id"
                   >
