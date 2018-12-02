@@ -58,6 +58,7 @@
                       </b-card>
                     </b-card-group>
                   </div>
+                  <img class="img-fluid cap-bottom" style="left: 75%" src="cap.png" alt="cap">
                 </div>
               </div>
             </div>

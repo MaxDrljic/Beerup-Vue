@@ -667,8 +667,8 @@ p.beer-modal-paragraph {
 
 .cap-bottom {
   position: absolute;
-  bottom: -25px;
-  left: 566px;
+  bottom: -1.8rem;
+  left: 50%;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);

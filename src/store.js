@@ -1,11 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import VuexPersist from 'vuex-persist';
 import _ from 'lodash';
 
 Vue.use(Vuex)
 
+const vuexPersist = new VuexPersist({
+  storage: window.localStorage
+})
+
+
 export default new Vuex.Store({
+  plugins: [vuexPersist.plugin],
   state: {
     page: 1,
     beers: [],

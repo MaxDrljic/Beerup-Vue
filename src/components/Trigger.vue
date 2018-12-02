@@ -5,15 +5,6 @@
 <script>
 export default {
   name: "Trigger",
-  props: {
-    options: {
-      type: Object,
-      default: {
-        root: null,
-        threshold: "0"
-      }
-    }
-  },
   data() {
     return {
       observer: null

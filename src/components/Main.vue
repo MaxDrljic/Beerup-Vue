@@ -67,6 +67,7 @@
                 <!-- Infinite Scroll Trigger -->
                 <Trigger @triggerIntersected="loadMore"></Trigger>
               </div>
+              <img class="img-fluid cap-bottom" style="left: 74%" src="cap.png" alt="cap">
             </div>
 
             <!-- Crate Section -->

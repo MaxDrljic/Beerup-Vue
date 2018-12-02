@@ -16,22 +16,16 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-xl-6 col-md-6">
-              <img
-                class="crate-modal-img img-fluid"
-                :src="favorite.image_url"
-                alt="beer"
-              />
+              <img class="crate-modal-img img-fluid" :src="favorite.image_url" alt="beer">
             </div>
             <div class="col-xl-6 col-md-6 beer-modal-container pt-4">
-              <h4 class="beer-modal-header pb-4 d-none d-sm-block">
-                {{ favorite.name }}
-              </h4>
-              <small class="ibu pt-4">
-                IBU <span class="ibu-span">{{ favorite.ibu }}</span>
+              <h4 class="beer-modal-header pb-4 d-none d-sm-block">{{ favorite.name }}</h4>
+              <small class="ibu pt-4">IBU
+                <span class="ibu-span">{{ favorite.ibu }}</span>
               </small>
-              <br class="d-none d-sm-block" />
-              <small class="abv">
-                ABV <span class="abv-span">{{ favorite.abv }}%</span>
+              <br class="d-none d-sm-block">
+              <small class="abv">ABV
+                <span class="abv-span">{{ favorite.abv }}%</span>
               </small>
               <p class="beer-modal-paragraph pt-2">
                 <small class="text-muted">Description:</small>
@@ -45,9 +39,7 @@
             @click="addToCrate(favorite);"
             type="button"
             class="btn beerup-button add-to-crate"
-          >
-            ADD TO CRATE
-          </button>
+          >ADD TO CRATE</button>
         </div>
       </div>
     </div>
