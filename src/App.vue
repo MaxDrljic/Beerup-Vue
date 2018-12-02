@@ -426,7 +426,7 @@ span.nav-span {
 }
 
 .beer-title {
-  word-break:break-all;
+  word-break: break-all;
   color: #292929;
   font-size: 0.8vw;
   font-weight: bold;
@@ -463,6 +463,10 @@ span.nav-span {
 
 .crate-tabs {
   margin-left: 30px;
+}
+
+.nav-link.crate-link {
+  cursor: pointer;
 }
 
 .nav-link .crate-span,

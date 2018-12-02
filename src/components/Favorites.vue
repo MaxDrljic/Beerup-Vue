@@ -19,16 +19,11 @@
           <div class="row">
             <div class="col-xl-8 col-md-6 col-xs-12 main-content">
               <h3 class="beer-heading">My favorite beers</h3>
-              <small class="text-muted"
-                >Double-click to remove from favorites!</small
-              >
+              <small class="text-muted">Note: Double-click to remove from favorites!</small>
+              <Sort></Sort>
               <div class="container">
                 <div class="row">
-                  <div
-                    class="col-md-3 p-0"
-                    v-for="favorite in favorites"
-                    :key="favorite.id"
-                  >
+                  <div class="col-md-3 p-0" v-for="favorite in favorites" :key="favorite.id">
                     <b-card-group deck>
                       <b-card @dblclick="removeFavorite(favorite.id);">
                         <div class="row no-gutters">
@@ -38,30 +33,24 @@
                               v-b-modal="'crateModal'"
                               @click="sendFavorite(favorite);"
                             >
-                              <img
-                                :src="favorite.image_url"
-                                class="card-img-top"
-                                alt="Beer Image"
-                              />
+                              <img :src="favorite.image_url" class="card-img-top" alt="Beer Image">
                             </b-link>
                           </div>
                           <div class="col card-text-container">
                             <div class="card-block pl-2">
-                              <h5 class="card-title beer-title">
-                                {{ favorite.name }}
-                              </h5>
+                              <h5 class="card-title beer-title">{{ favorite.name }}</h5>
                               <small class="text-muted ibu">
                                 IBU
-                                <span class="ibu-span fav-ibu">{{
+                                <span class="ibu-span fav-ibu">
+                                  {{
                                   favorite.ibu
-                                }}</span>
+                                  }}
+                                </span>
                               </small>
-                              <br class="d-none d-sm-block" />
+                              <br class="d-none d-sm-block">
                               <small class="text-muted abv">
                                 ABV
-                                <span class="abv-span fav-abv"
-                                  >{{ favorite.abv }} %</span
-                                >
+                                <span class="abv-span fav-abv">{{ favorite.abv }} %</span>
                               </small>
                             </div>
                           </div>
@@ -87,13 +76,15 @@ import { mapState } from "vuex";
 import Crate from "./Crate";
 import CrateModal from "@/components/CrateModal.vue";
 import Hero from "@/components/Hero.vue";
+import Sort from "@/components/Sort.vue";
 
 export default {
   name: "Favorites",
   components: {
     Hero,
     Crate,
-    CrateModal
+    CrateModal,
+    Sort
   },
   data() {
     return {

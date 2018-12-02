@@ -2,7 +2,7 @@
   <tr>
     <th class="sort-header">SORT BY:</th>
     <th class="pl-2 sort-option" @click="orderByName()">Name</th>
-    <th class="pl-2 sort-option" @click=" orderByIbu()">IBU</th>
+    <th class="pl-2 sort-option" @click="orderByIbu()">IBU</th>
     <th class="pl-2 sort-option" @click="orderByAbv()">ABV</th>
   </tr>
 </template>
