@@ -23,7 +23,11 @@
               <Sort></Sort>
               <div class="container">
                 <div class="row">
-                  <div class="col-md-3 p-0" v-for="favorite in favorites" :key="favorite.id">
+                  <div
+                    class="col-xl-3 col-md-6 p-0"
+                    v-for="favorite in favorites"
+                    :key="favorite.id"
+                  >
                     <b-card-group deck>
                       <b-card @dblclick="removeFavorite(favorite.id);">
                         <div class="row no-gutters">

@@ -20,11 +20,13 @@
             </div>
             <div class="col-xl-6 col-md-6 beer-modal-container pt-4">
               <h4 class="beer-modal-header pb-4 d-none d-sm-block">{{ favorite.name }}</h4>
-              <small class="ibu pt-4">IBU
+              <small class="ibu pt-4">
+                IBU
                 <span class="ibu-span">{{ favorite.ibu }}</span>
               </small>
               <br class="d-none d-sm-block">
-              <small class="abv">ABV
+              <small class="abv">
+                ABV
                 <span class="abv-span">{{ favorite.abv }}%</span>
               </small>
               <p class="beer-modal-paragraph pt-2">

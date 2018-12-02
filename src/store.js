@@ -94,12 +94,15 @@ export default new Vuex.Store({
     // Ordering used in Sort Component
     ORDER_BY_NAME: (state) => {
       state.beers = _.orderBy(state.beers, 'name', 'asc');
+      state.favorites = _.orderBy(state.favorites, 'name', 'asc');
     },
     ORDER_BY_IBU: (state) => {
       state.beers = _.orderBy(state.beers, 'ibu', 'desc');
+      state.favorites = _.orderBy(state.favorites, 'ibu', 'desc');
     },
     ORDER_BY_ABV: (state) => {
       state.beers = _.orderBy(state.beers, 'abv', 'desc');
+      state.favorites = _.orderBy(state.favorites, 'abv', 'desc');
     }
   },
   actions: {

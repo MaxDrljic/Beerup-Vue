@@ -675,4 +675,328 @@ p.beer-modal-paragraph {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+
+/* === MEDIA QUERIES === */
+
+/* TABLET */
+@media (max-width: 768px) {
+  .join-container {
+    text-align: center;
+  }
+
+  .join-container .beerster {
+    font-size: 14px;
+  }
+
+  .join-container .heading-join {
+    padding-top: 8%;
+    font-size: 60px;
+    line-height: 60px;
+    word-break: break-word;
+  }
+
+  .join-heading {
+    font-size: 30px;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  .join-form {
+    padding-left: 6rem;
+    max-width: 85%;
+  }
+
+  button.btn.join-up {
+    width: 270px;
+    max-width: 200%;
+    margin-left: 15%;
+  }
+
+  .favourites-heading,
+  .joinup-heading {
+    padding-bottom: 10%;
+    font-size: 60px;
+    line-height: 60px;
+    word-break: break-word;
+  }
+
+  .beerup-button {
+    z-index: 10;
+    position: relative;
+    top: 174%;
+  }
+
+  .illustration {
+    margin-right: 18%;
+  }
+
+  .main-container {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .cap-top {
+    position: relative;
+    top: -35px;
+    left: 182px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  .cap-bottom {
+    bottom: -27px;
+    left: 340px;
+  }
+
+  .beer-title {
+    font-size: 1.6vw;
+  }
+
+  .card img {
+    width: 2rem;
+  }
+  .card-img-top {
+    width: 1.5vw;
+    height: 12vh;
+    object-fit: cover;
+  }
+
+  .ibu,
+  .abv {
+    font-size: 12px;
+    line-height: 26px;
+  }
+
+  .crate-heading {
+    padding: 0.2rem 0 0 70px;
+  }
+
+  .footer-navbar .footer-links {
+    padding: 10px 0;
+  }
+
+  .footer-links li {
+    padding: 30px 0 0 0;
+  }
+
+  .join-span {
+    margin-left: -5px;
+  }
+
+  .social-container {
+    padding-left: 50%;
+    margin-top: -21px;
+  }
+
+  /* MODAL MEDIA QUERIES */
+  .beer-modal-img {
+    margin-left: 20%;
+  }
+
+  .beer-modal-container {
+    margin-right: 5%;
+  }
+
+  .beer-modal-paragraph {
+    word-wrap: break-word;
+  }
+
+  .add-to-crate {
+    margin-bottom: -60%;
+    margin-left: 20px;
+  }
+
+  .heart-outline {
+    text-decoration: none;
+    color: darkgray;
+    font-size: 2.2em;
+    padding-left: 4%;
+    padding-top: 1%;
+  }
+
+  .close {
+    font-size: 1.5em;
+    padding-right: 6% !important;
+    padding-top: 31px !important;
+    color: #ffc80a;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 414px) {
+  .navbar-dark .navbar-toggler {
+    border-color: transparent;
+  }
+  .fas.fa-bars {
+    padding-top: 10px;
+    color: #ffc80a;
+  }
+
+  .illustration {
+    padding: 0;
+    margin: 0;
+    margin-right: 30%;
+    height: 189.03px;
+    width: 160px;
+  }
+
+  .join-container .heading-join {
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  .main-container {
+    margin-top: -0.3rem;
+  }
+
+  .beerup-button {
+    top: 92%;
+  }
+
+  .beer-heading,
+  .crate-heading {
+    margin-top: 0.5rem;
+    padding-left: 40%;
+    font-size: 24px;
+  }
+
+  .card-group {
+    margin-left: 0;
+    padding-left: 0;
+    flex-direction: row;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card img {
+    width: 10rem;
+  }
+
+  .card-img-top {
+    padding: 0;
+  }
+
+  /* CRATE */
+  .crate-tabs {
+    margin-left: 0;
+  }
+
+  .crate-image {
+    margin-right: 12%;
+    transform: rotate(90deg);
+  }
+
+  .crate-text-container {
+    margin: 0;
+  }
+
+  .tab-pane {
+    margin-top: -0.1rem;
+  }
+
+  /* FOOTER */
+  .main-logo-container {
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+
+  .ml-auto {
+    margin-left: 8.5rem !important;
+    text-align: center;
+  }
+
+  a.nav-link.join-link {
+    padding-right: 1rem;
+  }
+
+  .social-container {
+    padding: 4rem 0 4rem 4rem;
+    margin: 0;
+  }
+
+  /* FAVOURITES */
+  .favourites-heading,
+  .joinup-heading {
+    padding-top: 1rem;
+    font-size: 40px;
+  }
+
+  /* JOIN */
+  .join-heading {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .join-up {
+    margin-left: 0;
+  }
+
+  .join-form {
+    padding-left: 0;
+  }
+
+  /* CAP IMAGES */
+  .cap-bottom {
+    position: absolute;
+    top: 313%;
+    left: 165px;
+  }
+
+  .cap-top {
+    max-width: 8%;
+    max-height: 8%;
+    position: relative;
+    left: 298px;
+    top: -304px;
+  }
+
+  /* MODAL MEDIA QUERIES */
+  .modal-content {
+    left: 15%;
+    max-width: 70%;
+    max-height: 70%;
+  }
+
+  .beer-modal-img {
+    position: relative;
+    width: 71px;
+    height: 277.79px;
+    bottom: 50%;
+    margin-left: 35%;
+  }
+
+  .beer-modal-container {
+    margin-left: 0;
+    margin-top: -50%;
+    text-align: center;
+  }
+
+  .beer-modal-header {
+    padding-bottom: 10px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .ibu-span,
+  .abv-span {
+    padding-left: 1px;
+  }
+
+  small.abv {
+    margin-left: 10px;
+  }
+
+  .add-to-crate {
+    margin-bottom: -120%;
+    margin-left: -0;
+    margin-right: -0.5%;
+  }
+}
 </style>
