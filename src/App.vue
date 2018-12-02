@@ -484,7 +484,8 @@ span.nav-span {
   border-bottom: 4px solid #f05638;
 }
 
-.crate-instructions {
+.crate-instructions,
+.beers-in-crate {
   font-family: "Open Sans";
   color: #3f4750;
   font-size: 12px;
