@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import _ from 'lodash';
 
 Vue.use(Vuex)
 
@@ -17,7 +18,7 @@ export default new Vuex.Store({
     crate3: [],
     crateCount1: 0,
     crateCount2: 0,
-    crateCount3: 0
+    crateCount3: 0,
   },
   getters: {
     IS_FAVORITE: state => {
@@ -46,35 +47,52 @@ export default new Vuex.Store({
     },
     ADD_TO_CRATE: (state, payload) => {
       state.favorites.find(favorite => favorite.data === payload);
-      if (state.activeCrate1 == true) {
-        state.crate1.push(payload)
-        state.crateCount1 += 1;
-        state.activeCrate2 = false;
-        state.activeCrate3 = false;
-      } else if (state.activeCrate2 == true) {
-        state.crate2.push(payload)
-        state.crateCount2 += 1;
-        state.activeCrate1 = false;
-        state.activeCrate3 = false;
-      } else {
-        state.crate3.push(payload)
-        state.crateCount3 += 1;
-        state.activeCrate1 = false;
-        state.activeCrate2 = false;
-      }  
+      // Check if the crate is filled with more than 20 beers
+      if (state.crate1.length >= 20 || state.crate2.length >= 20 || state.crate3.length >= 20) {
+        return;
+      }
+        // Determine which crate is active
+        if (state.activeCrate1 == true) {
+          state.crate1.push(payload)
+          state.crateCount1 += 1;
+          state.activeCrate2 = false;
+          state.activeCrate3 = false;
+        } else if (state.activeCrate2 == true) {
+          state.crate2.push(payload)
+          state.crateCount2 += 1;
+          state.activeCrate1 = false;
+          state.activeCrate3 = false;
+        } else {
+          state.crate3.push(payload)
+          state.crateCount3 += 1;
+          state.activeCrate1 = false;
+          state.activeCrate2 = false;
+        }       
     },
     SET_ACTIVE_CRATE: (state) => {
-      if (state.activeCrate2 === false ) {
+      if (state.activeCrate2 === false && state.activeCrate1 === true && state.activeCrate3 === false) {
         state.activeCrate2 = true
         state.activeCrate1 = false;
-        state.activeCrate3 = false;
-      } else if (state.activeCrate3 == false){
+        state.activeCrate3 = false; 
+      } else if (state.activeCrate3 === false && state.activeCrate2 === true && state.activeCrate1 === false) {
         state.activeCrate3 = true;
         state.activeCrate1 = false;
         state.activeCrate2 = false;
       } else {
-        return "An error has occured!"
+        state.activeCrate1 = true
+        state.activeCrate2 = false;
+        state.activeCrate3 = false;
       }
+    },
+    // Ordering used in Sort Component
+    ORDER_BY_NAME: (state) => {
+      state.beers = _.orderBy(state.beers, 'name', 'asc');
+    },
+    ORDER_BY_IBU: (state) => {
+      state.beers = _.orderBy(state.beers, 'ibu', 'desc');
+    },
+    ORDER_BY_ABV: (state) => {
+      state.beers = _.orderBy(state.beers, 'abv', 'desc');
     }
   },
   actions: {
@@ -100,6 +118,15 @@ export default new Vuex.Store({
     },
     activeCrate: (context, payload) => {
       context.commit("SET_ACTIVE_CRATE", payload);
+    },
+    orderByName: (context, payload) => {
+      context.commit("ORDER_BY_NAME", payload);
+    },
+    orderByIbu: (context, payload) => {
+      context.commit("ORDER_BY_IBU", payload);
+    },
+    orderByAbv: (context, payload) => {
+      context.commit("ORDER_BY_ABV", payload);
     }
   }
 })

@@ -33,6 +33,7 @@
           <div class="row">
             <div class="col-xl-8 col-md-6 col-xs-12 main-content">
               <h3 class="beer-heading">Beer</h3>
+              <Sort></Sort>
               <div class="container">
                 <div class="row">
                   <div class="col-md-3 p-0 beer" v-for="beer in beers" :key="beer.id">
@@ -81,6 +82,7 @@
 import { mapState } from "vuex";
 import BeerModal from "./BeerModal";
 import Crate from "./Crate";
+import Sort from "./Sort";
 import Trigger from "./Trigger";
 
 export default {
@@ -88,6 +90,7 @@ export default {
   components: {
     BeerModal,
     Crate,
+    Sort,
     Trigger
   },
   data() {

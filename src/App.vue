@@ -157,6 +157,17 @@ a {
   text-rendering: optimizeLegibility;
 }
 
+.disabled {
+  color: gray !important;
+  pointer-events: none;
+}
+
+.disabledSpan {
+  color: gray !important;
+  pointer-events: none !important;
+  border-bottom: 4px solid #f05638 !important;
+}
+
 /* Overwrites Bootstrap default behavior */
 a.nav-link {
   color: white !important;
@@ -281,6 +292,15 @@ input[type="number"] {
   transform: rotate(45deg);
 }
 
+.sort-header {
+  font-size: 14px;
+}
+
+.sort-option {
+  font-size: 12px;
+  cursor: pointer;
+}
+
 /* NAVIGATION */
 .logo-container {
   margin-top: 10px;
@@ -400,12 +420,13 @@ span.nav-span {
 }
 
 .card-img-top {
-  width: 100%;
-  height: 9vw;
+  width: 2.2vw;
+  height: 17vh;
   object-fit: cover;
 }
 
 .beer-title {
+  word-break:break-all;
   color: #292929;
   font-size: 0.8vw;
   font-weight: bold;
@@ -555,10 +576,10 @@ footer {
 /* === BEER MODAL === */
 
 .heart-outline {
+  position: fixed;
   border: none;
   cursor: pointer;
-  position: absolute;
-  top: -11vh;
+  top: -8vh;
   text-decoration: none;
   color: darkgray;
   font-size: 2.6em;
@@ -574,9 +595,13 @@ footer {
   color: rgba(255, 0, 0, 0.466);
 }
 
+.modal-content {
+  border: none;
+}
+
 .beer-modal-img {
-  width: 50%;
-  height: 50%;
+  max-width: 50%;
+  max-height: 50%;
 }
 
 .crate-modal-img {
