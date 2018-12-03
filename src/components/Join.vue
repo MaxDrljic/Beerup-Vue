@@ -129,7 +129,7 @@
                 <button type="submit" @click="processForm()" class="btn join-up">JOIN UP</button>
               </form>
 
-              <img class="img-fluid cap-bottom" src="cap.png" alt="cap">
+              <img class="img-fluid cap-bottom cap-bottom-join" src="cap.png" alt="cap">
             </div>
           </div>
         </div>

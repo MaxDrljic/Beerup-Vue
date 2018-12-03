@@ -584,7 +584,7 @@ footer {
   position: fixed;
   border: none;
   cursor: pointer;
-  top: -8vh;
+  top: -5.2rem;
   text-decoration: none;
   color: darkgray;
   font-size: 2.6em;
@@ -669,12 +669,16 @@ p.beer-modal-paragraph {
 .cap-bottom {
   position: absolute;
   bottom: -1.8rem;
-  left: 50%;
+  left: 74%;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+.cap-bottom-favorite {
+  left: 75%;
 }
 
 /* === MEDIA QUERIES === */
@@ -816,7 +820,6 @@ p.beer-modal-paragraph {
     color: darkgray;
     font-size: 2.2em;
     padding-left: 4%;
-    padding-top: 1%;
   }
 
   .close {
@@ -840,7 +843,7 @@ p.beer-modal-paragraph {
   .illustration {
     padding: 0;
     margin: 0;
-    margin-right: 30%;
+    margin-right: 5.5rem;
     height: 189.03px;
     width: 160px;
   }
@@ -856,21 +859,37 @@ p.beer-modal-paragraph {
   }
 
   .beerup-button {
-    top: 92%;
+    top: 13rem;
+    left: auto;
   }
 
   .beer-heading,
   .crate-heading {
     margin-top: 0.5rem;
-    padding-left: 15%;
-    font-size: 24px;
+    padding-left: 7.3rem;
+    font-size: 22px;
+  }
+
+  .favorite-beer-heading {
+    padding-left: 3.7rem;
   }
 
   .beer-title {
     font-size: 12px;
   }
 
+  .sort-header,
+  .sort-option {
+    padding-left: 3rem;
+  }
+
+  .crate-heading {
+    padding-left: 0;
+    margin-left: 0.3rem;
+  }
+
   .note {
+    padding-left: 1rem;
     font-size: 12px;
   }
 
@@ -910,7 +929,7 @@ p.beer-modal-paragraph {
   }
 
   .crate-image {
-    margin-right: 8%;
+    margin-right: 1rem;
     transform: rotate(90deg);
   }
 
@@ -946,6 +965,10 @@ p.beer-modal-paragraph {
     padding-right: 1rem;
   }
 
+  .join-span {
+    padding-right: 5px;
+  }
+
   .social-container {
     padding: 4rem 0 4rem 4rem;
     margin: 0;
@@ -960,8 +983,8 @@ p.beer-modal-paragraph {
 
   /* JOIN */
   .join-heading {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 24px !important;
+    line-height: 32px !important;
   }
 
   .join-up {
@@ -975,16 +998,26 @@ p.beer-modal-paragraph {
   /* CAP IMAGES */
   .cap-bottom {
     position: absolute;
-    top: 313%;
-    left: 165px;
+    top: 45.3rem;
+    left: 9.5rem;
+  }
+
+  .cap-bottom-join {
+    top: 80rem;
+    left: 9.5rem;
+  }
+
+  .cap-bottom-favorite {
+    top: 58rem;
+    left: 9.5rem;
   }
 
   .cap-top {
     max-width: 8%;
     max-height: 8%;
-    position: relative;
+    position: absolute;
     left: 298px;
-    top: -304px;
+    top: -130px;
   }
 
   /* MODAL MEDIA QUERIES */

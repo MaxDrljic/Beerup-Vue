@@ -1,6 +1,5 @@
 <template>
   <div class="col-xl-4 col-md-6 col-xs-12 side-container">
-    <img class="img-fluid cap-top" src="cap.png" alt="cap">
     <h3 class="crate-heading">Crate</h3>
 
     <!-- CRATE TABS -->

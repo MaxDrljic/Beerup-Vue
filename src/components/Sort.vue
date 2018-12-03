@@ -1,5 +1,5 @@
 <template>
-  <tr>
+  <tr class="sort-row">
     <th class="sort-header">SORT BY:</th>
     <th class="pl-2 sort-option" @click="orderByName()">Name</th>
     <th class="pl-2 sort-option" @click="orderByIbu()">IBU</th>

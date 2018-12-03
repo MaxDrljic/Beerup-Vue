@@ -18,7 +18,7 @@
         <div class="container">
           <div class="row">
             <div class="col-xl-8 col-md-6 col-xs-12 main-content">
-              <h3 class="beer-heading">My favorite beers</h3>
+              <h3 class="beer-heading favorite-beer-heading">My favorite beers</h3>
               <small class="text-muted note">Note: Double-click to remove from favorites!</small>
               <Sort></Sort>
               <div class="container">
@@ -62,7 +62,7 @@
                       </b-card>
                     </b-card-group>
                   </div>
-                  <img class="img-fluid cap-bottom" style="left: 75%" src="cap.png" alt="cap">
+                  <img class="img-fluid cap-bottom cap-bottom-favorite" src="cap.png" alt="cap">
                 </div>
               </div>
             </div>

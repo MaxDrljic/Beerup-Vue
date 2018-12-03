@@ -75,6 +75,11 @@
 <script>
 export default {
   name: "BeerModal",
+  data() {
+    return {
+      show: false
+    };
+  },
   props: ["data"],
   methods: {
     toggleFavorite: function(data) {
