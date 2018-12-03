@@ -139,6 +139,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import Hero from "@/components/Hero.vue";
 
 export default {
