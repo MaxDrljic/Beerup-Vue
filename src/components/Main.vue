@@ -36,7 +36,11 @@
               <Sort></Sort>
               <div class="container">
                 <div class="row">
-                  <div class="col-xl-3 col-md-6 p-0 beer" v-for="beer in beers" :key="beer.id">
+                  <div
+                    class="col-xl-3 col-md-6 col-6 p-0 beer"
+                    v-for="beer in beers"
+                    :key="beer.id"
+                  >
                     <b-card-group deck>
                       <b-card>
                         <div class="row no-gutters">
