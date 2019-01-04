@@ -69,7 +69,11 @@
                   </div>
                 </div>
                 <!-- Infinite Scroll Trigger -->
-                <Trigger @triggerIntersected="loadMore"></Trigger>
+                <button
+                  type="button"
+                  class="btn load-more-button"
+                  @click="loadMore"
+                >LOAD MORE BEERS!</button>
               </div>
               <img class="img-fluid cap-bottom" src="cap.png" alt="cap">
             </div>
@@ -88,15 +92,13 @@ import { mapState } from "vuex";
 import BeerModal from "./BeerModal";
 import Crate from "./Crate";
 import Sort from "./Sort";
-import Trigger from "./Trigger";
 
 export default {
   name: "Main",
   components: {
     BeerModal,
     Crate,
-    Sort,
-    Trigger
+    Sort
   },
   data() {
     return {

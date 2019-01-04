@@ -394,6 +394,21 @@ span.nav-span {
   line-height: 14px;
 }
 
+.load-more-button {
+  position: relative;
+  left: 65%;
+  margin: 20px 20px;
+  height: 48px;
+  width: 172px;
+  border-radius: 49.5px;
+  background-color: #ffc80a;
+  color: #292929;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2.4px;
+  line-height: 14px;
+}
+
 /* ===  MAIN SECTION === */
 
 .main-content {
