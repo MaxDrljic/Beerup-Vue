@@ -9,6 +9,8 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+let app = '';
+
 const config = {
   apiKey: process.env.VUE_APP_FIREBASE_API,
   authDomain: "beerup-vue.firebaseapp.com",
@@ -19,8 +21,14 @@ const config = {
 };
 firebase.initializeApp(config);
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+firebase.auth().onAuthStateChanged(() => {
+  if(!app) {
+    app = new Vue({
+      router,
+      store,
+      render: h => h(App)
+    }).$mount('#app')
+  }
+});
+
+

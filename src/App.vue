@@ -41,6 +41,11 @@
                   <span class="nav-span">Favorites</span>
                 </router-link>
               </li>
+              <li class="nav-item px-3">
+                <router-link tag="span" class="nav-link" to="/login">
+                  <span class="nav-span">Sign in</span>
+                </router-link>
+              </li>
               <li class="nav-item ml-4 bordered-link">
                 <router-link class="nav-link" to="/join">JOIN</router-link>
               </li>

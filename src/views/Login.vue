@@ -29,10 +29,11 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(
-          function(user) {
+          user => {
             alert("Well done! You are now connected.");
+            this.$router.replace("/");
           },
-          function(err) {
+          err => {
             alert("Oops. " + err.message);
           }
         );
