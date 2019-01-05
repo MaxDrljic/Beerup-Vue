@@ -1,14 +1,25 @@
 <template>
   <div class="login">
-    <h3>Sign in</h3>
-    <input class="sign-in-input" type="text" v-model="email" placeholder="Email">
-    <br>
-    <input class="sign-in-input" type="password" v-model="password" placeholder="Password">
-    <br>
-    <button class="connection" @click="login">Connection</button>
-    <p class="sign-in-p">You don't have an account? You can
-      <router-link to="/sign-up">create one in a minute!</router-link>
-    </p>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-6 mx-auto">
+          <h3 class="sign-in-header">Sign in</h3>
+          <input class="sign-in-input form-control" type="text" v-model="email" placeholder="Email">
+          <br>
+          <input
+            class="sign-in-input form-control"
+            type="password"
+            v-model="password"
+            placeholder="Password"
+          >
+          <br>
+          <button class="connection btn beerup-button" @click="login">Connect</button>
+          <p class="sign-in-p">You don't have an account? You can
+            <router-link to="/sign-up">create one in a minute!</router-link>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -44,19 +55,21 @@ export default {
 
 <style scoped>
 .login {
-  margin-top: 40px;
+  margin-top: 8%;
+}
+
+.sign-in-header {
+  padding-bottom: 10px;
 }
 
 .sign-in-input {
   margin: 10px 0;
-  width: 20%;
+  width: 80%;
   padding: 15px;
 }
 
 .connection {
-  margin-top: 20px;
-  width: 10%;
-  cursor: pointer;
+  margin-top: 10px;
 }
 
 .sign-in-p {
@@ -68,5 +81,9 @@ export default {
 .sign-in-p a {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.sign-in-p a:hover {
+  color: #ffc80a;
 }
 </style>

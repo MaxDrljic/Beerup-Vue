@@ -1,14 +1,25 @@
 <template>
   <div class="sign-up">
-    <h3>Create a new account!</h3>
-    <input class="sign-up-input" type="text" v-model="email" placeholder="Email">
-    <br>
-    <input class="sign-up-input" type="password" v-model="password" placeholder="Password">
-    <br>
-    <button class="sign-up-b" @click="signUp">Sign Up</button>
-    <span class="go-back">or go back to
-      <router-link to="/login">login</router-link>.
-    </span>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-6 mx-auto">
+          <h3 class="sign-up-header">Create a new account!</h3>
+          <input class="sign-up-input form-control" type="text" v-model="email" placeholder="Email">
+          <br>
+          <input
+            class="sign-up-input form-control"
+            type="password"
+            v-model="password"
+            placeholder="Password"
+          >
+          <br>
+          <button class="sign-up-b btn beerup-button" @click="signUp">Sign Up</button>
+          <span class="go-back">Or go back to
+            <router-link to="/login">login</router-link>.
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -43,25 +54,37 @@ export default {
 </script>
 
 <style scoped>
-.signUp {
-  margin-top: 40px;
+.sign-up {
+  margin-top: 8%;
+}
+
+.sign-up-header {
+  padding-bottom: 10px;
 }
 
 .sign-up-input {
   margin: 10px 0;
-  width: 20%;
+  width: 80%;
   padding: 15px;
 }
 
 .sign-up-b {
   margin-top: 10px;
-  width: 10%;
-  cursor: pointer;
+  font-size: 13px;
 }
 
 .go-back {
   display: block;
-  margin-top: 20px;
-  font-size: 11px;
+  margin-top: 40px;
+  font-size: 12px;
+}
+
+.go-back a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.go-back a:hover {
+  color: #ffc80a;
 }
 </style>
