@@ -55,7 +55,7 @@ export default {
 
 <style scoped>
 .login {
-  margin-top: 8%;
+  margin-top: 5%;
 }
 
 .sign-in-header {

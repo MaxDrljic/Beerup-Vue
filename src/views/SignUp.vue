@@ -55,7 +55,7 @@ export default {
 
 <style scoped>
 .sign-up {
-  margin-top: 8%;
+  margin-top: 6%;
 }
 
 .sign-up-header {
